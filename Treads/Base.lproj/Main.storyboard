@@ -183,6 +183,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPL-A1-FgC">
                                 <rect key="frame" x="254" y="572" width="75" height="75"/>
                                 <state key="normal" image="pauseButton"/>
+                                <connections>
+                                    <action selector="onPauseBtnPressed:" destination="0HL-VV-gEM" eventType="touchUpInside" id="SBe-7f-elZ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="END RUN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcr-Sa-y9I">
                                 <rect key="frame" x="156" y="602" width="57" height="15"/>
@@ -230,6 +233,10 @@
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="distanceLbl" destination="Ovh-mJ-NRZ" id="2Rq-yE-L6H"/>
+                        <outlet property="durationLbl" destination="hhH-he-Z1a" id="cXG-D7-I3r"/>
+                        <outlet property="paceLbl" destination="m4t-Tm-8r4" id="Zq9-Xx-Cjv"/>
+                        <outlet property="pauseBtn" destination="sPL-A1-FgC" id="UgT-pI-yiB"/>
                         <outlet property="sliderImgView" destination="HY3-Iu-XEI" id="ybC-XU-fDA"/>
                         <outlet property="swipeBgImgView" destination="Jcu-hM-sfh" id="Edj-7j-1qQ"/>
                     </connections>
