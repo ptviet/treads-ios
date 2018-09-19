@@ -184,19 +184,19 @@
                                 <rect key="frame" x="254" y="572" width="75" height="75"/>
                                 <state key="normal" image="pauseButton"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="endRunButton" translatesAutoresizingMaskIntoConstraints="NO" id="HY3-Iu-XEI">
-                                <rect key="frame" x="56.5" y="579.5" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="YuG-q7-Xyi"/>
-                                    <constraint firstAttribute="width" constant="60" id="k2Q-JN-k7v"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="END RUN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcr-Sa-y9I">
                                 <rect key="frame" x="156" y="602" width="57" height="15"/>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="endRunButton" translatesAutoresizingMaskIntoConstraints="NO" id="HY3-Iu-XEI">
+                                <rect key="frame" x="56" y="580" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="YuG-q7-Xyi"/>
+                                    <constraint firstAttribute="width" constant="60" id="k2Q-JN-k7v"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -229,6 +229,10 @@
                         <viewLayoutGuide key="safeArea" id="ldd-5s-o4U"/>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="sliderImgView" destination="HY3-Iu-XEI" id="ybC-XU-fDA"/>
+                        <outlet property="swipeBgImgView" destination="Jcu-hM-sfh" id="Edj-7j-1qQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mbj-P1-XzX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
