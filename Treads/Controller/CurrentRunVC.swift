@@ -1,7 +1,7 @@
 
 import UIKit
 
-class RunLogVC: UIViewController {
+class CurrentRunVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -10,4 +10,3 @@ class RunLogVC: UIViewController {
   
   
 }
-
