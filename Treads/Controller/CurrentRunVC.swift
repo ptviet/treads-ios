@@ -46,7 +46,6 @@ class CurrentRunVC: LocationVC {
     
   }
   
-  
   @objc func endRunSwipe(_ sender: UIPanGestureRecognizer ) {
     let minAdjust: CGFloat = 75
     let maxAdjust: CGFloat = 128
@@ -58,7 +57,8 @@ class CurrentRunVC: LocationVC {
           sliderView.center.x = sliderView.center.x + translation.x
         } else if sliderView.center.x >= (swipeBgImgView.center.x + maxAdjust) {
           sliderView.center.x = swipeBgImgView.center.x + maxAdjust
-//          endRun()
+          // Run ends
+          endRun()
           dismiss(animated: true, completion: nil)
         } else {
           sliderView.center.x = swipeBgImgView.center.x - minAdjust
@@ -89,7 +89,7 @@ extension CurrentRunVC: CLLocationManagerDelegate {
       startLocation = locations.first
     } else if let location = locations.last {
       runDistance += lastLocation.distance(from: location)
-      distanceLbl.text = "\(runDistance)"
+      distanceLbl.text = "\(runDistance.metertoKm(places: 2))"
     }
     lastLocation = locations.last
   }

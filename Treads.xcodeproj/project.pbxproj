@@ -33,6 +33,7 @@
 		4B1EDABB2151F6E300309B6C /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B1EDAA92151F6E300309B6C /* Montserrat-Medium.ttf */; };
 		4B1EDABD21520C6700309B6C /* CurrentRunVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EDABC21520C6700309B6C /* CurrentRunVC.swift */; };
 		4B1EDABF21520EE600309B6C /* LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EDABE21520EE600309B6C /* LocationVC.swift */; };
+		4B1EDAC1215222B200309B6C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EDAC0215222B200309B6C /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		4B1EDAA92151F6E300309B6C /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		4B1EDABC21520C6700309B6C /* CurrentRunVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentRunVC.swift; sourceTree = "<group>"; };
 		4B1EDABE21520EE600309B6C /* LocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVC.swift; sourceTree = "<group>"; };
+		4B1EDAC0215222B200309B6C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		4B1EDA932151F67A00309B6C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4B1EDAC0215222B200309B6C /* Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B1EDABF21520EE600309B6C /* LocationVC.swift in Sources */,
+				4B1EDAC1215222B200309B6C /* Extensions.swift in Sources */,
 				4B1EDA832151F3D000309B6C /* RunLogVC.swift in Sources */,
 				4B1EDA7F2151F3D000309B6C /* AppDelegate.swift in Sources */,
 				4B1EDABD21520C6700309B6C /* CurrentRunVC.swift in Sources */,
