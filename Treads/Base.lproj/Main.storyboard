@@ -268,7 +268,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="runLogCell" rowHeight="80" id="Efw-Cg-EjO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="runLogCell" rowHeight="80" id="Efw-Cg-EjO" customClass="RunLogCell" customModule="Treads" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Efw-Cg-EjO" id="xAZ-xY-rQu">
@@ -315,6 +315,13 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DNA-3g-BYc" userLabel="Separator">
+                                                    <rect key="frame" x="0.0" y="79" width="375" height="1"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="5vD-Gf-irV"/>
+                                                    </constraints>
+                                                </view>
                                                 <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iqh-0b-T0t">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -327,14 +334,23 @@
                                                 <constraint firstItem="kE3-dt-OwB" firstAttribute="leading" secondItem="xAZ-xY-rQu" secondAttribute="leadingMargin" constant="10" id="DfO-Fc-390"/>
                                                 <constraint firstAttribute="bottom" secondItem="iqh-0b-T0t" secondAttribute="bottom" id="Odk-GJ-siH"/>
                                                 <constraint firstItem="zCE-as-u73" firstAttribute="centerY" secondItem="xAZ-xY-rQu" secondAttribute="centerY" id="S9c-zP-LlN"/>
+                                                <constraint firstItem="DNA-3g-BYc" firstAttribute="leading" secondItem="xAZ-xY-rQu" secondAttribute="leading" id="cIk-qA-NaK"/>
                                                 <constraint firstItem="zCE-as-u73" firstAttribute="centerX" secondItem="xAZ-xY-rQu" secondAttribute="centerX" id="cwz-UT-3ei"/>
                                                 <constraint firstAttribute="trailing" secondItem="iqh-0b-T0t" secondAttribute="trailing" id="eKK-WA-wnb"/>
                                                 <constraint firstItem="iqh-0b-T0t" firstAttribute="leading" secondItem="xAZ-xY-rQu" secondAttribute="leading" id="eLd-hk-zl7"/>
+                                                <constraint firstAttribute="bottom" secondItem="DNA-3g-BYc" secondAttribute="bottom" id="hZj-vM-pf6"/>
                                                 <constraint firstItem="LAv-Lc-mrN" firstAttribute="trailing" secondItem="xAZ-xY-rQu" secondAttribute="trailingMargin" constant="10" id="u4z-6G-wub"/>
+                                                <constraint firstAttribute="trailing" secondItem="DNA-3g-BYc" secondAttribute="trailing" id="yPE-Rz-ng9"/>
                                                 <constraint firstItem="iqh-0b-T0t" firstAttribute="top" secondItem="xAZ-xY-rQu" secondAttribute="top" id="yiP-X0-nSM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="avgPaceLbl" destination="fuO-JZ-mXx" id="IEj-KR-Kje"/>
+                                            <outlet property="dateLbl" destination="LAv-Lc-mrN" id="28x-7z-MwZ"/>
+                                            <outlet property="distanceLbl" destination="D1M-n0-Jqu" id="Qes-ps-vh1"/>
+                                            <outlet property="runDurationLbl" destination="r0W-Gf-urr" id="wEh-w9-TwD"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -355,6 +371,9 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Log" image="tabbar-myLogIconGray" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="tableView" destination="5yj-Dg-Sy2" id="44H-6N-pu1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

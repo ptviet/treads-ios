@@ -36,6 +36,7 @@
 		4B1EDAC1215222B200309B6C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EDAC0215222B200309B6C /* Extensions.swift */; };
 		4B45137D2153363E006FAA01 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B45137C2153363E006FAA01 /* Run.swift */; };
 		4B45137F21534227006FAA01 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B45137E21534227006FAA01 /* Constants.swift */; };
+		4B4513812153469F006FAA01 /* RunLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4513802153469F006FAA01 /* RunLogCell.swift */; };
 		A3599F43D23617FA0DCC25D9 /* Pods_Treads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866CEF29D39272A8BBCB79B0 /* Pods_Treads.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		4B1EDAC0215222B200309B6C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4B45137C2153363E006FAA01 /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		4B45137E21534227006FAA01 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4B4513802153469F006FAA01 /* RunLogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLogCell.swift; sourceTree = "<group>"; };
 		866CEF29D39272A8BBCB79B0 /* Pods_Treads.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Treads.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -187,6 +189,7 @@
 		4B1EDA962151F69100309B6C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4B4513802153469F006FAA01 /* RunLogCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				4B1EDA7F2151F3D000309B6C /* AppDelegate.swift in Sources */,
 				4B1EDABD21520C6700309B6C /* CurrentRunVC.swift in Sources */,
 				4B45137D2153363E006FAA01 /* Run.swift in Sources */,
+				4B4513812153469F006FAA01 /* RunLogCell.swift in Sources */,
 				4B1EDA812151F3D000309B6C /* BeginRunVC.swift in Sources */,
 				4B45137F21534227006FAA01 /* Constants.swift in Sources */,
 			);
