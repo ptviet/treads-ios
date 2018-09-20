@@ -37,6 +37,8 @@
 		4B45137D2153363E006FAA01 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B45137C2153363E006FAA01 /* Run.swift */; };
 		4B45137F21534227006FAA01 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B45137E21534227006FAA01 /* Constants.swift */; };
 		4B4513812153469F006FAA01 /* RunLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4513802153469F006FAA01 /* RunLogCell.swift */; };
+		4B4513832153555F006FAA01 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4513822153555F006FAA01 /* Location.swift */; };
+		4B4513852153597A006FAA01 /* RealmConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4513842153597A006FAA01 /* RealmConfig.swift */; };
 		A3599F43D23617FA0DCC25D9 /* Pods_Treads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866CEF29D39272A8BBCB79B0 /* Pods_Treads.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		4B45137C2153363E006FAA01 /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		4B45137E21534227006FAA01 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4B4513802153469F006FAA01 /* RunLogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLogCell.swift; sourceTree = "<group>"; };
+		4B4513822153555F006FAA01 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		4B4513842153597A006FAA01 /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = "<group>"; };
 		866CEF29D39272A8BBCB79B0 /* Pods_Treads.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Treads.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -171,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				4B45137E21534227006FAA01 /* Constants.swift */,
+				4B4513842153597A006FAA01 /* RealmConfig.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				4B45137C2153363E006FAA01 /* Run.swift */,
+				4B4513822153555F006FAA01 /* Location.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -345,11 +351,13 @@
 			files = (
 				4B1EDABF21520EE600309B6C /* LocationVC.swift in Sources */,
 				4B1EDAC1215222B200309B6C /* Extensions.swift in Sources */,
+				4B4513832153555F006FAA01 /* Location.swift in Sources */,
 				4B1EDA832151F3D000309B6C /* RunLogVC.swift in Sources */,
 				4B1EDA7F2151F3D000309B6C /* AppDelegate.swift in Sources */,
 				4B1EDABD21520C6700309B6C /* CurrentRunVC.swift in Sources */,
 				4B45137D2153363E006FAA01 /* Run.swift in Sources */,
 				4B4513812153469F006FAA01 /* RunLogCell.swift in Sources */,
+				4B4513852153597A006FAA01 /* RealmConfig.swift in Sources */,
 				4B1EDA812151F3D000309B6C /* BeginRunVC.swift in Sources */,
 				4B45137F21534227006FAA01 /* Constants.swift in Sources */,
 			);

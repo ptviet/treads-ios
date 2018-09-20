@@ -1,6 +1,7 @@
 
 import UIKit
 import MapKit
+import RealmSwift
 
 class CurrentRunVC: LocationVC {
   
@@ -13,12 +14,13 @@ class CurrentRunVC: LocationVC {
   @IBOutlet weak var pauseBtn: UIButton!
   
   // Variables
-  var startLocation: CLLocation!
-  var lastLocation: CLLocation!
-  var timer: Timer = Timer()
-  var runDistance: Double = 0.0
-  var counter: Int = 0
-  var pace: Int = 0
+  fileprivate var startLocation: CLLocation!
+  fileprivate var lastLocation: CLLocation!
+  fileprivate var coordinateLocations: List<Location> = List<Location>()
+  fileprivate var timer: Timer = Timer()
+  fileprivate var runDistance: Double = 0.0
+  fileprivate var counter: Int = 0
+  fileprivate var pace: Int = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -69,7 +71,7 @@ class CurrentRunVC: LocationVC {
   
   func endRun() {
     locationManager?.stopUpdatingLocation()
-    Run.addRunToRealm(pace: pace, distance: runDistance, duration: counter)
+    Run.addRunToRealm(pace: pace, distance: runDistance, duration: counter, locations: coordinateLocations)
   }
   
   @IBAction func onPauseBtnPressed(_ sender: Any) {
@@ -125,9 +127,13 @@ extension CurrentRunVC: CLLocationManagerDelegate {
       runDistance += lastLocation.distance(from: location)
       let distance = runDistance.meterToKm(places: 2)
       distanceLbl.text = "\(distance)"
+      
       if counter > 0 && distance > 0 {
         paceLbl.text = calculatePace(time: counter, distance: distance)
       }
+      
+      let newLocation = Location(latitude: Double(lastLocation.coordinate.latitude), longitude: Double(lastLocation.coordinate.longitude))
+      coordinateLocations.insert(newLocation, at: 0)
     }
     lastLocation = locations.last
   }
