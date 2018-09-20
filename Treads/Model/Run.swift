@@ -57,4 +57,15 @@ class Run: Object {
     
   }
   
+  static func getRun(byId id: String) -> Run? {
+    do {
+      let realm = try Realm(configuration: RealmConfig.runDataConfig)
+      
+      return realm.object(ofType: Run.self, forPrimaryKey: id)
+    } catch {
+      debugPrint("Error adding Run to Realm: \(error)")
+      return nil
+    }
+  }
+  
 }
