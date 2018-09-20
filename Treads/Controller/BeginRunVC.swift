@@ -6,6 +6,12 @@ class BeginRunVC: LocationVC {
   
   // Outlets
   @IBOutlet weak var mapView: MKMapView!
+  @IBOutlet weak var lastRunCloseBtn: UIButton!
+  @IBOutlet weak var paceLbl: UILabel!
+  @IBOutlet weak var distanceLbl: UILabel!
+  @IBOutlet weak var durationLbl: UILabel!
+  @IBOutlet weak var lastRunView: UIView!
+  @IBOutlet weak var lastRunStack: UIStackView!
   
   // Variables
   let authStatus = CLLocationManager.authorizationStatus()
@@ -20,6 +26,7 @@ class BeginRunVC: LocationVC {
   override func viewWillAppear(_ animated: Bool) {
     locationManager?.delegate = self
     locationManager?.startUpdatingLocation()
+    getLastRun()
   }
   
   override func viewDidDisappear(_ animated: Bool) {
@@ -40,7 +47,32 @@ class BeginRunVC: LocationVC {
     
   }
   
+  func getLastRun() {
+    guard let lastRun = Run.getAllRuns()?.first else {
+      lastRunView.isHidden = true
+      lastRunStack.isHidden = true
+      lastRunCloseBtn.isHidden = true
+      
+      return
+    }
+    
+    paceLbl.text = "\(lastRun.pace.formatTimeDurationToString()) km/h"
+    distanceLbl.text = "\(lastRun.distance.meterToKm(places: 2)) km"
+    durationLbl.text = lastRun.duration.formatTimeDurationToString()
+    
+    lastRunView.isHidden = false
+    lastRunStack.isHidden = false
+    lastRunCloseBtn.isHidden = false
+    
+  }
   
+  @IBAction func onLastRunCloseBtnPressed(_ sender: Any) {
+    lastRunView.isHidden = true
+    lastRunStack.isHidden = true
+    lastRunCloseBtn.isHidden = true
+  }
+  
+
 }
 
 extension BeginRunVC: CLLocationManagerDelegate {
