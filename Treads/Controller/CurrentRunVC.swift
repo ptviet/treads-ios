@@ -18,6 +18,7 @@ class CurrentRunVC: LocationVC {
   var timer: Timer = Timer()
   var runDistance: Double = 0.0
   var counter: Int = 0
+  var pace: Int = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -38,6 +39,7 @@ class CurrentRunVC: LocationVC {
   func startRun() {
     locationManager?.startUpdatingLocation()
     startTimer()
+    pauseBtn.setImage(UIImage(named: "pauseButton"), for: .normal)
   }
   
   func startTimer() {
@@ -50,12 +52,31 @@ class CurrentRunVC: LocationVC {
     durationLbl.text = counter.formatTimeDurationToString()
   }
   
+  func calculatePace(time seconds: Int, distance km: Double) -> String {
+    pace = Int(Double(seconds) / km)
+    return pace.formatTimeDurationToString()
+  }
+  
+  func pauseRun() {
+    startLocation = nil
+    lastLocation = nil
+    
+    timer.invalidate()
+    locationManager?.stopUpdatingLocation()
+    pauseBtn.setImage(UIImage(named: "resumeButton"), for: .normal)
+    
+  }
+  
   func endRun() {
     locationManager?.stopUpdatingLocation()
   }
   
   @IBAction func onPauseBtnPressed(_ sender: Any) {
-    
+    if timer.isValid {
+      pauseRun()
+    } else {
+      startRun()
+    }
   }
   
   @objc func endRunSwipe(_ sender: UIPanGestureRecognizer ) {
@@ -101,7 +122,11 @@ extension CurrentRunVC: CLLocationManagerDelegate {
       startLocation = locations.first
     } else if let location = locations.last {
       runDistance += lastLocation.distance(from: location)
-      distanceLbl.text = "\(runDistance.metertoKm(places: 2))"
+      let distance = runDistance.meterToKm(places: 2)
+      distanceLbl.text = "\(distance)"
+      if counter > 0 && distance > 0 {
+        paceLbl.text = calculatePace(time: counter, distance: distance)
+      }
     }
     lastLocation = locations.last
   }
