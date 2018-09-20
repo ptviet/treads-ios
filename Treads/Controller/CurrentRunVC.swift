@@ -69,6 +69,7 @@ class CurrentRunVC: LocationVC {
   
   func endRun() {
     locationManager?.stopUpdatingLocation()
+    Run.addRunToRealm(pace: pace, distance: runDistance, duration: counter)
   }
   
   @IBAction func onPauseBtnPressed(_ sender: Any) {

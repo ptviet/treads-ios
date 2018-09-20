@@ -5,7 +5,7 @@ class RunLogVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+//    print("\(Run.getAllRuns()!)")
   }
   
   
