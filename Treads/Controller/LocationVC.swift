@@ -21,5 +21,4 @@ class LocationVC: UIViewController, MKMapViewDelegate {
     
   }
   
-  
 }

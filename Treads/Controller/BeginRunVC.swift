@@ -7,6 +7,10 @@ class BeginRunVC: LocationVC {
   // Outlets
   @IBOutlet weak var mapView: MKMapView!
   
+  // Variables
+  let authStatus = CLLocationManager.authorizationStatus()
+  let regionRadius: Double = 1000
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     checkLocationAuthStatus()
@@ -23,8 +27,19 @@ class BeginRunVC: LocationVC {
   }
   
   @IBAction func onCenterLocationBtnPressed(_ sender: Any) {
+    if authStatus == .authorizedWhenInUse {
+      checkLocationAuthStatus()
+      centerMapOnUserLocation()
+    }
+  }
+  
+  func centerMapOnUserLocation() {
+    guard let coordinate = locationManager?.location?.coordinate else { return }
+    let coordinateRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
+    mapView.setRegion(coordinateRegion, animated: true)
     
   }
+  
   
 }
 
